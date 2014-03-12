@@ -20,7 +20,7 @@
 
     submit: function () {
       var data = this.data;
-      this.results.text(eval(this.editor.text()));
+      this.results.text(eval(this.editor[0].value));
     }
   }
 })(this);
