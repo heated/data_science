@@ -1,18 +1,12 @@
-#edit-area {
-  width: 100%;
+#editor {
   height: 100%;
-  font-family: monospace;
+  font-size: 16px;
 }
 
-#data {
+#output {
   height: 74%;
 }
 
 #main-content {
   height: 50%;
-}
-
-#results {
-  font-family: monospace;
-  color: #555;
 }
