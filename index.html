@@ -2,28 +2,74 @@
   <head>
     <title>Science!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/data_science.js"></script>
   </head>
 
   <body>
-    <div id="desc">
-      This is an app that teaches Data Science.<br><br>
-      Api: <pre style="display: inline">data</pre> is the available dataset.<br>
-      For example, <pre style="display: inline">data[0]</pre> would return 0.<br>
-    </div><br>
+    <div class="container">
+      <h3>Learn You a Data Science</h3>
+      <div class="row">
 
-    <pre id="data"></pre><br>
-    
-    <pre id="results">&lt;results&gt;<br></pre><br>
+        <div class="col-md-5">
+          <div id="desc" class="well">
+            Come all ye' developers. Enter swift but beware:<br>
+            Forsooth! What science lurks within!<br>
+          </div>
+        </div>
 
-    <div id="editor">
-      <textarea id="edit-area" cols="50" rows="6">var sum = data.reduce(function (sum, el) {
-  return sum + el;
-});
+        <div class="col-md-7">
+          <div id="api" class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Api</h3>
+            </div>
+            <div class="panel-body">
+              <code>data</code> - the available dataset (in the form of an array).<br>
+              For example, <code>data[0]</code> would return 0.<br>
+              <br>
+              All manner of Javascript works here.
+            </div>
+          </div>
+        </div>
 
-"Average: " + sum / data.length;</textarea>
-    </div><br>
+      </div>
+      <div id="main-content" class="row">
 
-    <button id="submit">Submit</button>
+        <div id="main-left" class="col-md-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Data</h3>
+            </div>
+            <div class="panel-body">
+              <pre id="data"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="main-right" class="col-md-7">
+          <div id="editor">
+            <pre><textarea
+              id="edit-area"
+              class="form-control">
+            </textarea></pre>
+          </div>
+        </div>
+      
+      </div>
+      <div class="row">
+
+        <div class="col-md-5">
+          <pre id="results">&lt;results&gt;</pre>
+        </div>
+
+        <div class="col-md-7">
+          <button id="submit" class="btn-primary btn">Submit</button>
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
