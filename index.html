@@ -10,14 +10,32 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <h3>Learn You a Data Science</h3>
-      <div class="row">
+      <div id="main-content" class="row">
 
         <div class="col-md-5">
           <div id="desc" class="well">
             Come all ye' developers. Enter swift but beware:<br>
             Forsooth! What science lurks within!<br>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Data</h3>
+            </div>
+            <div class="panel-body">
+              <pre id="data"></pre>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Output</h3>
+            </div>
+            <div class="panel-body" id="results">
+              null
+            </div>
           </div>
         </div>
 
@@ -30,43 +48,18 @@
               <code>data</code> - the available dataset (in the form of an array).<br>
               For example, <code>data[0]</code> would return 0.<br>
               <br>
-              All manner of Javascript works here.
+              The last Javascript statement is evaluated and returned.<br>
             </div>
           </div>
-        </div>
 
-      </div>
-      <div id="main-content" class="row">
-
-        <div id="main-left" class="col-md-5">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Data</h3>
-            </div>
-            <div class="panel-body">
-              <pre id="data"></pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="main-right" class="col-md-7">
           <div id="editor">
-            <pre><textarea
+            <textarea
               id="edit-area"
               class="form-control">
-            </textarea></pre>
-          </div>
-        </div>
-      
-      </div>
-      <div class="row">
+            </textarea>
+          </div><br>
 
-        <div class="col-md-5">
-          <pre id="results">&lt;results&gt;</pre>
-        </div>
-
-        <div class="col-md-7">
-          <button id="submit" class="btn-primary btn">Submit</button>
+          <button id="submit" class="btn-primary btn">Run</button>
         </div>
 
       </div>
