@@ -7,25 +7,23 @@
 
   <body>
     <div id="desc">
-      This is an app that teaches Data Science.<br>
-    </div>
-    <br>
-    <div id="data">
-    </div>
-    <br>
-    <div id="results">
-      results<br>
-      results<br>
-    </div>
-    <br>
+      This is an app that teaches Data Science.<br><br>
+      Api: <pre style="display: inline">data</pre> is the available dataset.<br>
+      For example, <pre style="display: inline">data[0]</pre> would return 0.<br>
+    </div><br>
+
+    <pre id="data"></pre><br>
+    
+    <pre id="results">&lt;results&gt;<br></pre><br>
+
     <div id="editor">
-      <textarea id="edit-area" cols="70" rows="10">var sum = data.reduce(function (sum, el) {
+      <textarea id="edit-area" cols="50" rows="6">var sum = data.reduce(function (sum, el) {
   return sum + el;
 });
 
 "Average: " + sum / data.length;</textarea>
-    </div>
-    <br>
+    </div><br>
+
     <button id="submit">Submit</button>
   </body>
 </html>
