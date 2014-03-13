@@ -64,6 +64,14 @@ $(function () {
   var initialCode = "data.join('\\n');";
 
   var slides = [
+'<div class="row">\
+  <div class="col-md-4">\
+    <button class="btn default-btn btn-block">Hi</button>\
+  </div>\
+  <div class="col-md-6">\
+    <button class="btn success-btn btn-block">Welcome</button>\
+  </div>\
+</div>',
     '<div class="well">hi</div>',
     '<div class="well well-sm">small well!</div>',
     '<img src="http://placekitten.com/550/300">'
@@ -74,8 +82,6 @@ $(function () {
     initialCode,
     slides
   );
-
-  $('#run').tooltip();
 
   $('#slides').carousel({
     interval: false,
