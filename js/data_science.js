@@ -1,14 +1,14 @@
 'use strict';
 
 (function (root) {
-  var App = root.App = (root.App || {});
+  var DataSci = root.DataSci = (root.DataSci || {});
 
-  var controller = App.controller = function (description, data, initialCode) {
-    this.description = description;
+  var controller = DataSci.controller = function (data, initialCode, slides) {
     this.data = data;
     this.initialCode = initialCode;
     this.output = $('#output');
     $('#run').click(this.run.bind(this));
+    this.setupSlides(slides);
     this.setupEditor();
     this.displayInfo();
     this.run();
@@ -16,7 +16,6 @@
 
   controller.prototype = {
     displayInfo: function () {
-      $('#desc').append(this.description);
       $('#data').text(JSON.stringify(this.data));
       this.editor.setValue(this.initialCode);
     },
@@ -37,6 +36,21 @@
         bindKey: {win: 'Ctrl-Enter', mac: 'Command-Enter'},
         exec: this.run.bind(this)
       });
+    },
+
+    setupSlides: function (slideData) {
+      var slides = $('#slides-inner');
+      slideData.forEach(function (slide) {
+        var newSlide = $('<div class="item">')
+        if(slides.html() == "") {
+          newSlide.addClass('active');
+        }
+
+        newSlide.html(slide);
+        slides.append(newSlide);
+      });
+
+      $('#total-slides').text(slideData.length);
     }
   }
 })(this);
@@ -47,12 +61,32 @@ $(function () {
     data.push(i);
   }
 
-  var controller = new App.controller(
-    "<br>The current data is about a set of numbers.<br>Please find the average of the set.",
+  var initialCode = "data.join('\\n');";
+
+  var slides = [
+    '<div class="well">hi</div>',
+    '<div class="well well-sm">small well!</div>',
+    '<img src="http://placekitten.com/550/300">'
+  ];
+
+  var controller = new DataSci.controller(
     data,
-    "data.join('\\n');"
+    initialCode,
+    slides
   );
 
-  $('#run').tooltip({});
+  $('#run').tooltip();
+
+  $('#slides').carousel({
+    interval: false,
+    wrap: false
+  });
+
+  var counter = $('#slide-count');
+
+  $('#slides').on('slide.bs.carousel', function (event) {
+    var dir = (event.direction == 'left') ? 1 : -1;
+    counter.text(parseInt(counter.text()) + dir);
+  });
 
 });

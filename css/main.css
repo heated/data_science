@@ -4,5 +4,14 @@
 }
 
 #output {
-  height: 40%;
+  height: 23%;
+}
+
+#slides {
+  height: 300px;
+  /*border: 1px solid #aaa;*/
+}
+
+#slide-count {
+  margin: auto 0;
 }

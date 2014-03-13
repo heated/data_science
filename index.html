@@ -16,10 +16,27 @@
       <div class="row">
 
         <div class="col-md-5">
-          <div id="desc" class="well">
-            Come all ye' developers. Enter swift but beware:<br>
-            Forsooth! What science lurks within!<br>
+
+
+          <div id="slides" class="carousel" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div id="slides-inner" class="carousel-inner"></div>
+
+            <!-- Controls -->
           </div>
+
+          <div class="row text-center">
+            <a class="left" href="#slides" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+              <span id="slide-count">1</span>/<span id="total-slides"></span>
+
+            <a class="right" href="#slides" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+          <br><br>
 
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -34,7 +51,7 @@
         <div class="col-md-7">
           <div id="api" class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Api</h3>
+              <h3 class="panel-title">API</h3>
             </div>
             <div class="panel-body">
               <code>data</code> - the available dataset (in the form of an array).<br>
