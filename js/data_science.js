@@ -8,7 +8,7 @@
     this.data = data;
     this.initialCode = initialCode;
     this.output = $('#output');
-    $('#submit').click(this.run.bind(this));
+    $('#run').click(this.run.bind(this));
     this.setupEditor();
     this.displayInfo();
     this.run();
@@ -52,5 +52,7 @@ $(function () {
     data,
     "data.join('\\n');"
   );
+
+  $('#run').tooltip({});
 
 });
